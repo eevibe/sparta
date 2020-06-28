@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta property="og:title" content="PLUR 2020" />
+    <meta property="og:description" content="new normal online festival" />
+    <meta property="og:image" content="{{ url_for('static', filename='ogimage.png') }}" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- 웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lexend+Tera&family=Noto+Sans+KR&display=swap"
+        rel="stylesheet">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+
+
+
+
+    <title>PLUR 2020</title>
+    <style>
+        * {
+            margin: 20 auto;
+            /* background-color: rgb(0, 204, 255); */
+            /* background-image: linear-gradient(rgb(255, 162, 162), rgb(207, 134, 255)); */
+            /* background-image: linear-gradient(to right, rgb(198, 255, 107), rgb(146, 184, 255)); */
+        }
+
+        body {
+
+            font-family: 'Karla', 'Noto Sans KR';
+            font-size: 20px;
+
+        }
+
+
+
+        /* html, */
+        /* body {
+            overflow: scroll;
+        } */
+
+        /* #grad {
+            background-image: linear-gradient(red, yellow);
+        } */
+        .half {
+            overflow: scroll;
+            /* width: 50%; */
+            height: 100vh;
+            float: left;
+
+
+        }
+
+
+        /* @font-face {
+            font-family: 'Poppins', sans-serif;
+            src: url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Poppins&display=swap');
+            font-size: 50px;
+        } */
+
+        #box1 {
+            width: 10%;
+            /* background-image: linear-gradient( rgb(139, 97, 255), rgb(255, 255, 255)); */
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 116, 119);
+            padding: 40px;
+
+            line-height: 180%;
+        }
+
+        #box2 {
+
+            width: 69%;
+            background-color: rgb(255, 255, 255);
+
+            /* color: rgb(172, 147, 110); */
+            color: rgb(78, 78, 78);
+            padding: 40px;
+            /* line-height: 170%; */
+            /* letter-spacing: 0.3px; */
+            text-align: center;
+
+        }
+
+        #box3 {
+            width: 21%;
+            padding: 40px;
+            background-image: linear-gradient(rgb(255, 154, 174), rgb(255, 225, 0), rgb(0, 255, 21), rgb(46, 210, 255));
+            color: white;
+            line-height: 180%;
+            font-size: 21px;
+
+        }
+
+
+
+        #step1 {
+            display: none;
+        }
+
+        #step2 {
+            display: none;
+        }
+
+        #step3 {
+            display: none;
+        }
+
+        #step4 {
+            display: none;
+        }
+
+        #text1 {
+            display: none;
+        }
+
+        #text2 {
+            display: none;
+        }
+
+        #text3 {
+            display: none;
+        }
+
+        #text4 {
+            display: none;
+        }
+
+        .btn-xl {
+            font-size: 50px;
+            color: rgb(255, 166, 166);
+        }
+
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 400px;
+            height: 400px;
+        }
+
+        .map_wrap,
+        .map_wrap * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Karla', 'Noto Sans KR';
+            font-size: 12px;
+        }
+
+        .map_wrap a,
+        .map_wrap a:hover,
+        .map_wrap a:active {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .map_wrap {
+            position: relative;
+            width: 70%;
+            height: 500px;
+        }
+
+        #menu_wrap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 250px;
+            margin: 10px 0 30px 10px;
+            padding: 5px;
+            overflow-y: auto;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+            font-size: 12px;
+            border-radius: 10px;
+        }
+
+        .bg_white {
+            background: #fff;
+        }
+
+        #menu_wrap hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 2px solid #5F5F5F;
+            margin: 3px 0;
+        }
+
+        #menu_wrap .option {
+            text-align: center;
+        }
+
+        #menu_wrap .option p {
+            margin: 10px 0;
+        }
+
+        #menu_wrap .option button {
+            margin-left: 5px;
+        }
+
+        #placesList li {
+            list-style: none;
+        }
+
+        #placesList .item {
+            position: relative;
+            border-bottom: 1px solid #888;
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 65px;
+        }
+
+        #placesList .item span {
+            display: block;
+            margin-top: 4px;
+        }
+
+        #placesList .item h5,
+        #placesList .item .info {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        #placesList .item .info {
+            padding: 10px 0 10px 55px;
+        }
+
+        #placesList .info .gray {
+            color: #8a8a8a;
+        }
+
+        #placesList .info .jibun {
+            padding-left: 26px;
+            background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;
+        }
+
+        #placesList .info .tel {
+            color: #009900;
+        }
+
+        #placesList .item .markerbg {
+            float: left;
+            position: absolute;
+            width: 36px;
+            height: 37px;
+            margin: 10px 0 0 10px;
+            background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;
+        }
+
+        #placesList .item .marker_1 {
+            background-position: 0 -10px;
+        }
+
+        #placesList .item .marker_2 {
+            background-position: 0 -56px;
+        }
+
+        #placesList .item .marker_3 {
+            background-position: 0 -102px
+        }
+
+        #placesList .item .marker_4 {
+            background-position: 0 -148px;
+        }
+
+        #placesList .item .marker_5 {
+            background-position: 0 -194px;
+        }
+
+        #placesList .item .marker_6 {
+            background-position: 0 -240px;
+        }
+
+        #placesList .item .marker_7 {
+            background-position: 0 -286px;
+        }
+
+        #placesList .item .marker_8 {
+            background-position: 0 -332px;
+        }
+
+        #placesList .item .marker_9 {
+            background-position: 0 -378px;
+        }
+
+        #placesList .item .marker_10 {
+            background-position: 0 -423px;
+        }
+
+        #placesList .item .marker_11 {
+            background-position: 0 -470px;
+        }
+
+        #placesList .item .marker_12 {
+            background-position: 0 -516px;
+        }
+
+        #placesList .item .marker_13 {
+            background-position: 0 -562px;
+        }
+
+        #placesList .item .marker_14 {
+            background-position: 0 -608px;
+        }
+
+        #placesList .item .marker_15 {
+            background-position: 0 -654px;
+        }
+
+        #pagination {
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #pagination a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        #pagination .on {
+            font-weight: bold;
+            cursor: default;
+            color: #777;
+        }
+    </style>
+
+
+
+    <script>
+
+
+
+        $(document).ready(function () {
+            hashtag();
+            let swiper = new Swiper('.swiper-container', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                autoplay: {
+                    delay: 1500,
+                },
+                observer: true,
+                observeParents: true
+            });
+
+            // $(window).scroll(function () {
+            //     var height = $(document).scrollTop();
+            //     if (position >= 50) {
+            //         $('#box1').append('안녕');
+            //     }
+            // });
+
+            alert('입장!')
+
+        });
+
+        function hashtag() {
+            $('#instagram').empty();
+            $.ajax({
+                type: 'GET',
+                url: '/api/hashtag',
+                data: {},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+
+                        // alert(response['msg']);
+
+                        console.log(response['photos']);
+                        let posts = response['photos'];
+                        for (let i = 0; i < posts.length; i++) {
+                            let post = posts[i];
+
+                            let url = post['post_url'];
+
+                            let temp_html = `<div class="swiper-slide" style="background-image:url('${url}')"></div>`
+
+                            $('#instagram').append(temp_html);
+                        }
+
+                    }
+                }
+            })
+        }
+
+        function openclose() {
+            $('#people').hide();
+            let status = $('#step1').css('display');
+            if (status == 'block') {
+                $('#step1').hide()
+                $('#people').show();
+
+            } else {
+
+                $('#step1').show();
+
+            }
+        }
+
+        function newOpenclose() {
+            let status = $('#text1').css('display');
+            if (status == 'block') {
+                $('#text1').hide()
+            } else {
+                $('#text1').show()
+            }
+        }
+
+        function openclose2() {
+            $('#people').hide();
+            let status = $('#step2').css('display');
+            if (status == 'block') {
+                $('#step2').hide()
+                $('#people').show();
+                // $('#arrow2').attr("src", "https://postfiles.pstatic.net/MjAyMDA2MTlfMjY5/MDAxNTkyNTY1MTI1MTI0.1sO0vUwwHRrfnV8QGsmmEJXfPXuzzxX3GhDU17nvXtog.gAxmpU45uuf5PAhflYWke7yJb-XwD9pbwteghuLAWAYg.PNG.eevibe/down2.png?type=w773")
+            } else {
+                $('#step2').show()
+                // $('#arrow2').attr("src", "https://postfiles.pstatic.net/MjAyMDA2MTlfNTEg/MDAxNTkyNTY1MTI1MTMy.XZtXlWLpBveXcAxvQba-1uJ_tb7589kJXIJzhzN8T18g.2f3-vPuGu55dfxCihia_cG2II5PbvmsQEDeK396tEhIg.PNG.eevibe/up2.png?type=w773")
+            }
+            window.setTimeout(function() {
+                map.relayout();
+            }, 0);
+        }
+
+        function newOpenclose2() {
+            let status = $('#text2').css('display');
+            if (status == 'block') {
+                $('#text2').hide()
+            } else {
+                $('#text2').show()
+            }
+        }
+
+        function openclose3() {
+            $('#people').hide();
+            let status = $('#step3').css('display');
+            if (status == 'block') {
+                $('#step3').hide()
+                $('#people').show();
+                // $('#arrow3').attr("src", "https://postfiles.pstatic.net/MjAyMDA2MTlfMTU4/MDAxNTkyNTY3NDA1NzY2.9gy1EZae90qCo3zE03dOvjq_mOyKXaKvjy35cItili4g.kt46nRThowEXTE7YK3-VWwP-F1islRTqDuJQ-AZgPaIg.PNG.eevibe/down3.png?type=w773")
+            } else {
+                $('#step3').show()
+                // $('#arrow3').attr("src", "https://postfiles.pstatic.net/MjAyMDA2MTlfMjQ0/MDAxNTkyNTY3NDA1NzY5.B4R7z7n47fY5MMrps-rMboxkUiHMTqycjFHy2njTriAg.YAyWpBWs80jmU3jS3e12C7QnMfStHpJOjo_AZjyjlLMg.PNG.eevibe/up3.png?type=w773")
+            }
+        }
+
+        function newOpenclose3() {
+            let status = $('#text3').css('display');
+            if (status == 'block') {
+                $('#text3').hide()
+            } else {
+                $('#text3').show()
+            }
+        }
+
+        function openclose4() {
+            $('#people').hide();
+            let status = $('#step4').css('display');
+            if (status == 'block') {
+                $('#step4').hide()
+                $('#people').show();
+                $('#arrow4').attr("src", "https://postfiles.pstatic.net/MjAyMDA2MTlfODcg/MDAxNTkyNTY3NDE2MTIy.zk4KXsENuv0R1PT_sBBCpdU_S-PE9AtbZDQlZd1z_rwg.EJM7JY23amcORBcOH0_Z1F4GZIs6p9jdVIO6I7S5lQog.PNG.eevibe/down4.png?type=w773")
+            } else {
+
+                $('#step4').show()
+                $('#arrow4').attr("src", "https://postfiles.pstatic.net/MjAyMDA2MTlfMjA4/MDAxNTkyNTY3NDE2MTMz.HCZNDRd-cXcT4g2cuCAeasO3aCo9h_uwyFKHkd34vNIg.Yf7QH3w-I7W4DOi3A3fhwN2AvNvTXW6g4aVduIlRbeIg.PNG.eevibe/up4.png?type=w773")
+            }
+        }
+
+        function newOpenclose4() {
+            let status = $('#text4').css('display');
+            if (status == 'block') {
+                $('#text4').hide()
+            } else {
+                $('#text4').show()
+            }
+        }
+
+        // function logoChange() {
+        //     let status = $('#logoBox1').css('display');
+        //     if (status == 'block') {
+        //         $('#logoBox1').hide()
+        //         $('#logo').attr("src", "https://blogfiles.pstatic.net/MjAyMDA2MjhfNjkg/MDAxNTkzMzI5NDI1NjMx.2uak3Mlrn0X3l8f2n7k6BzuBP0WO6uRqEa9XBRrcKQIg.exp0hPtma0b5pHv9Wo8AnfSJ_oSCXp0ITewf0WdjDRAg.PNG.eevibe/star.png")
+        //     } else {
+        //         $('#logoBox1').show()
+        //         $('#logo').attr("src", "https://blogfiles.pstatic.net/MjAyMDA2MjdfMTgg/MDAxNTkzMjU5MjkyMzcy.AUP2KGMFXC3pMNravU9EPbCqhgDPF3S2TfaGLs74l_0g.bdEDP0TQ7DgtxrPMjL2VwYyKrSINZmeGok_gmP38TpUg.PNG.eevibe/new_logo.png")
+        //     }
+        // }
+
+
+    </script>
+</head>
+
+<body>
+
+    <div>
+
+
+
+        <!-- 왼쪽 이미지 칸 -->
+        <div class="half" id="box1">
+
+            <!-- <a id="logo" onclick="logoChange()" href="#" role="button"><img
+                src="https://blogfiles.pstatic.net/MjAyMDA2MjdfMTgg/MDAxNTkzMjU5MjkyMzcy.AUP2KGMFXC3pMNravU9EPbCqhgDPF3S2TfaGLs74l_0g.bdEDP0TQ7DgtxrPMjL2VwYyKrSINZmeGok_gmP38TpUg.PNG.eevibe/new_logo.png"
+                alt="" style="width: 100%;"></a> -->
+
+
+            <img src="https://blogfiles.pstatic.net/MjAyMDA2MjdfMTgg/MDAxNTkzMjU5MjkyMzcy.AUP2KGMFXC3pMNravU9EPbCqhgDPF3S2TfaGLs74l_0g.bdEDP0TQ7DgtxrPMjL2VwYyKrSINZmeGok_gmP38TpUg.PNG.eevibe/new_logo.png"
+                alt="" width="100%" id="logo">
+
+            <!-- <div id="logoBox1"></div> -->
+
+        </div>
+
+
+        <!-- 중간 내용 칸 -->
+        <div class="half" id="box2">
+
+            <button type="button" class="btn btn-link" id="arrow2" onclick="openclose2(); newOpenclose2();"
+                style="color: rgb(46, 210, 255); float: right;">Food</button>
+            <button type="button" class="btn btn-link" id="arrow4" onclick="openclose4(); newOpenclose4();"
+                style="color: rgb(0, 255, 21); float: right;">Community</button>
+            <button type="button" class="btn btn-link" id="arrow3" onclick="openclose3(); newOpenclose3();"
+                style="color: rgb(255, 225, 0); float: right;">Stage</button>
+            <button type="button" class="btn btn-link" id="arrow1" onclick="openclose(); newOpenclose();"
+                style="color: rgb(255, 154, 174); float: right;">About</button><br><br><br>
+
+            <div id="people"
+                style="background-image: url('https://blogfiles.pstatic.net/MjAyMDA2MjhfNDMg/MDAxNTkzMzI5MTM2NjM5.I3RBOI4B9gjx3d_0SD2wQkoqR32k6HT3O2JuTC8km5Eg.I4UGb8fcWEndL2BVEWkCSfT9fbgPYwoDy3PZTDT0x7cg.PNG.eevibe/line_gradient.png'); background-repeat: no-repeat; background-size: 100%;">
+
+                <br>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏽</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏻‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏿‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏾‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧔🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👵🏽</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏿‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏼‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏻‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👧🏼</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏾</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏿‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl"
+                    style="color: rgb(255, 166, 166);">👱🏽‍♂️</button><br>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏼‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏽 </button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏻‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏾‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👦🏼</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👶🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏿‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏽‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏻‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧔🏾 </button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏼‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏾‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl"
+                    style="color: rgb(255, 166, 166);">👩🏾‍🦲</button><br>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏼‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏽‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👵🏿</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏽‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏼‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏽‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏿‍♀️</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏾‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏻‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧔🏼</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧓🏼</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧔🏿</button>
+                <button type="button" class="btn btn-link btn-xl"
+                    style="color: rgb(255, 166, 166);">👩🏽‍🦱</button><br>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏿‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏻‍♂️</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👧🏽</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👧🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏽</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏿‍♀️</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏾‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👴🏼</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏼‍♀️</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏻‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏾‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏼</button><br>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👵🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏾‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏽</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏼‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏻‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏾‍♀️</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏿‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧓🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏾</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏿‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏼‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👴🏻</button><br>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏿‍♂️</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏽‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏿</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏻‍🦱</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👵🏾</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏿‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👧🏾</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👦🏿</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧒🏼</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏻</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧓🏾</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👴🏿</button>
+                <button type="button" class="btn btn-link btn-xl"
+                    style="color: rgb(255, 166, 166);">🧑🏼‍🦰</button><br>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧒🏾</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏼‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧔🏽</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏻‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏿‍🦳</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏼</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👱🏾‍♂️</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏻‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👨🏼‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">👩🏿‍🦲</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧑🏽‍🦰</button>
+                <button type="button" class="btn btn-link btn-xl" style="color: rgb(255, 166, 166);">🧔🏼</button>
+                <button type="button" class="btn btn-link btn-xl"
+                    style="color: rgb(255, 166, 166);">👨🏻‍🦱</button><br><br>
+
+
+
+
+
+            </div>
+            <!-- <a href="https://en.wikipedia.org/wiki/PLUR" style="color: rgb(172, 147, 110);">what PLUR — PEACE, LOVE,
+                UNITY, RESPECT — means</a><br><br><br> -->
+
+            <!-- 화살표 1번 -->
+            <!-- <a id="posting-box-btn" onclick="openclose()" href="#" role="button"><img
+                    src="https://postfiles.pstatic.net/MjAyMDA2MTlfMTg4/MDAxNTkyNTYzMzc1NDU2.xdCOkhszCYrAcEv91k9e_HoVms2_S6YUgtaqpjdmMwYg.iEqh1N1Qw95LCNTWhHdXoflvSpBIpGH-50kQxPTrFrcg.PNG.eevibe/down.png?type=w773"
+                    alt="" style="width: 30%;"></a><br><br><br> -->
+
+            <div id="step1">
+                <!-- <img src="https://postfiles.pstatic.net/MjAyMDA2MTlfMTIw/MDAxNTkyNTM4Nzc5NTYz.akdIrBNYnVPskxaHh8tn6oxq7fY3PCiCDu6MkwCh4aMg.qQ1t5rwI8CWK04R3yRm3cVZ5uNKZhukmVduBxH8Yht8g.PNG.eevibe/num1.png?type=w773"
+                    alt="" style="width: 30%;"><br><br><br> -->
+
+                <a href="https://en.wikipedia.org/wiki/PLUR" style="color: rgb(172, 147, 110);">what PLUR — PEACE, LOVE,
+                    UNITY, RESPECT — means</a><br><br><br>
+
+
+                <img src="https://blogfiles.pstatic.net/MjAyMDA2MjhfMjgy/MDAxNTkzMzE3NDQwOTgx.hzn4HKAJD2o9sT-MrX1DxOLmsQwci8eqVmSgIDrSh_sg.VpWYa86IX-LlTT8iUfJpXSopFDcGbSPGVaQRYsW1PKgg.PNG.eevibe/IMGBIN_light-blu-ray-disc-rainbow-glory-png_GhqR4qu9.png"
+                    alt="" width="70%">
+
+
+            </div>
+
+            <!-- 화살표 2번 -->
+            <!-- <a id="posting-box-btn" onclick="openclose2()" href="#" role="button"><img
+                    src="https://postfiles.pstatic.net/MjAyMDA2MTlfMjY5/MDAxNTkyNTY1MTI1MTI0.1sO0vUwwHRrfnV8QGsmmEJXfPXuzzxX3GhDU17nvXtog.gAxmpU45uuf5PAhflYWke7yJb-XwD9pbwteghuLAWAYg.PNG.eevibe/down2.png?type=w773"
+                    alt="" style="width: 30%;" id="arrow2"></a><br><br><br>
+
+            <div id="step2"> -->
+            <!-- <img src="https://postfiles.pstatic.net/MjAyMDA2MTlfMzQg/MDAxNTkyNTQ4MTk1NTIw.jcfs1Ke6w37mkHmAhHAaiMGScRcoNXiaQvBU_qdaAsEg.1fhl8W9xprMzzrxjh_jbNrxhSpWLwo2Re-dW6SWAWSwg.PNG.eevibe/num2.png?type=w773"
+                    alt="" style="width: 30%;"><br><br><br> -->
+
+            <!-- 🧔🏻 : 신분증 보여주세요!<br><br>
+
+                <img src="https://ojsfile.ohmynews.com/STD_IMG_FILE/2016/0407/IE001946009_STD.jpg" alt=""><br><br><br>
+
+                🧔🏻 : 확인했습니다! 팔찌 드릴게요!
+
+                <img src="https://postfiles.pstatic.net/MjAyMDA2MTlfMjk4/MDAxNTkyNTQ5ODEyOTUz.DF_z7nNkdrZ0jSHewLBOdGfO_W6ervrdiuO9aMXWvBMg.ryCckiLyr5lTDIrmSBd_2WnytcvUyYZwJ8rSSJ_vRZQg.PNG.eevibe/3arm.png?type=w773"
+                    alt="" style="width: 80%;"><br><br>
+
+                🧔🏻 : 입장하세요!<br><br><br><br></div> -->
+
+            <!-- 화살표 3번 -->
+            <!-- <a id="posting-box-btn" onclick="openclose3()" href="#" role="button"><img
+                    src="https://postfiles.pstatic.net/MjAyMDA2MTlfMTU4/MDAxNTkyNTY3NDA1NzY2.9gy1EZae90qCo3zE03dOvjq_mOyKXaKvjy35cItili4g.kt46nRThowEXTE7YK3-VWwP-F1islRTqDuJQ-AZgPaIg.PNG.eevibe/down3.png?type=w773"
+                    alt="" style="width: 30%;"></a><br><br><br> -->
+
+            <div id="step3">
+                <!-- <img src="https://postfiles.pstatic.net/MjAyMDA2MTlfMTAz/MDAxNTkyNTUwMjA3NTIx.-JSZQbLOLDYTt4GxksyMBFXFXzDdG_vOZoECTyD-Is0g.a122tYDhCvOBnUTXa089WO_tCltu0BNFoYdC6nVKToAg.PNG.eevibe/num3.png?type=w773"
+                    alt="" style="width: 30%;"><br><br><br> -->
+
+
+
+
+                <!-- <img src="https://postfiles.pstatic.net/MjAyMDA2MTlfMTQg/MDAxNTkyNTUxMjI4NzQ2.UzQLIxRTpmd0S77DekrSs33o-rnHh-KgzIuk9hju2L0g.PoLUZ-054dL6B9V6YpGi7KNkmOc_SaYQz0KwrXba8l4g.PNG.eevibe/6arm.png?type=w773"
+                    alt=""> -->
+                <p align="middle">
+                    <iframe width="100%" height="704"
+                        src="https://www.youtube.com/embed/_0KMSc7Jz_Y?list=PLoSIOFPSXQoOzRM5tbCes1MmKkzHi8jPq"
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </p>
+            </div>
+
+            <!-- 화살표 4번 -->
+            <!-- <a id="posting-box-btn" onclick="openclose4()" href="#" role="button"><img
+                    src="https://postfiles.pstatic.net/MjAyMDA2MTlfODcg/MDAxNTkyNTY3NDE2MTIy.zk4KXsENuv0R1PT_sBBCpdU_S-PE9AtbZDQlZd1z_rwg.EJM7JY23amcORBcOH0_Z1F4GZIs6p9jdVIO6I7S5lQog.PNG.eevibe/down4.png?type=w773"
+                    alt="" style="width: 30%;" id="arrow4"></a><br><br><br> -->
+
+            <div id="step4">
+                <!-- <img src="https://postfiles.pstatic.net/MjAyMDA2MTlfMTEy/MDAxNTkyNTUwMjA3NTIx.r5VuiKotzq-dGbjqH9MXl9F6acM-y3Fd8fk6r2th3oMg.mBaqOPsPOqPrzdwlQM3-6rxYfzaLZkTbudaMjZ5VmW8g.PNG.eevibe/num4.png?type=w773"
+                    alt="" style="width: 30%;"><br><br><br> -->
+
+
+
+                <!-- SWIPER 자리 -->
+
+                <!-- Swiper -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" id="instagram">
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+
+
+
+
+            </div>
+
+            <div id="step2">
+
+                <div class="map_wrap">
+                    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+
+                    <div id="menu_wrap" class="bg_white">
+                        <div class="option">
+                            <div>
+                                <form onsubmit="searchPlaces(); return false;">
+                                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15">
+                                    <button type="submit">검색하기</button>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        <ul id="placesList"></ul>
+                        <div id="pagination"></div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+        <!-- 오른쪽 이미지 칸 -->
+        <div class="half" id="box3">
+
+            <div id="text1"><button type="button" class="btn btn-link"
+                    style="color: white; font-size: 20px; font-weight: bolder;">PLUR</button>는 포스트-코로나 시대를 대비해 만들어진 비대면,
+                온라인
+                페스티벌입니다!<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                우리는 코로나 바이러스로 인해 우리의 여름, 우리의 축제를 잃어버렸습니다. 하지만 언제나 그랬듯 우리는 방법을 찾아낼 것이며, 이 기나긴 싸움에서 승리할
+                것입니다!<br>&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-link"
+                    style="color: white; font-size: 20px; font-weight: bolder;">Stage</button>에서 디제이들이 틀어주는 음악을 듣고,
+                <button type="button" class="btn btn-link"
+                    style="color: white; font-size: 20px; font-weight: bolder;">Community</button>에서 올해 페스티벌을 위해 준비한 자신의
+                의상을
+                자랑하고, 푸드트럭 대신 <button type="button" class="btn btn-link"
+                    style="color: white; font-size: 20px; font-weight: bolder;">Food</button>에서 집 근처 맛집을 찾아 배를 채워보세요!
+            </div>
+            <div id="text2">놀다보면 배고플텐데, 푸드트럭은 없고 근처의 맛집을 소개해줄게요! 장소 + 키워드로 검색을 해봐요. 예를 들자면 ‘역삼동 치킨’, ‘이태원 맛집’, '강릉시
+                맥주'.<br><br></div>
+            <div id="text3" style="font-size: 50px; text-align: center;">
+                👨🏼‍🦲👩🏿👱🏽‍♀️👩🏻‍🦳👨🏽‍🦱🧓🏿🧑🏼👩🏻👨🏾‍🦲👱🏿🧑🏽‍🦰👩🏼‍🦳👧🏿👶🏽🧑🏻‍🦲👴🏽👦🏻👨🏿‍🦱👨🏾‍🦱👵🏼👱🏻‍♀️🧑🏾‍🦲🧒🏻👩🏽‍🦰🧑🏿‍🦳🧓🏽👨🏻‍🦱👶🏼👨🏼‍🦲👩🏿👱🏽‍♀️👩🏻‍🦳👨🏽‍🦱🧓🏿🧑🏼👩🏻👨🏾‍🦲👱🏿🧑🏽‍🦰👩🏼‍🦳👧🏿👶🏽🧑🏻‍🦲👴🏽👦🏻👨🏿‍🦱👨🏾‍🦱👵🏼👱🏻‍♀️🧑🏾‍🦲🧒🏻👩🏽‍🦰🧑🏿‍🦳🧓🏽👨🏻‍🦱👶🏼👨🏼‍🦲👩🏿👱🏽‍♀️👩🏻‍🦳👨🏽‍🦱🧓🏿🧑🏼👩🏻👨🏾‍🦲👱🏿🧑🏽‍🦰👩🏼‍🦳👧🏿👶🏽🧑🏻‍🦲👴🏽👦🏻👨🏿‍🦱👨🏾‍🦱👵🏼👱🏻‍♀️🧑🏾‍🦲🧒🏻👩🏽‍🦰🧑🏿‍🦳🧓🏽👨🏻‍🦱👶🏼👨🏼‍🦲👩🏿👱🏽‍♀️👩🏻‍🦳👨🏽‍🦱🧓🏿🧑🏼👩🏻👨🏾‍🦲👱🏿🧑🏽‍🦰👩🏼‍🦳👧🏿👶🏽🧑🏻‍🦲👴🏽👦🏻👨🏿‍🦱👨🏾‍🦱👵🏼👱🏻‍♀️🧑🏾‍🦲🧒🏻👩🏽‍🦰🧑🏿‍🦳🧓🏽
+            </div>
+            <div id="text4" style="color: white;">올해 페스티벌을 위해 준비한 의상을 입고, 사진을 찍어볼까요? <button type="button"
+                    class="btn btn-link" style="color: white; font-size: 20px; font-weight: bolder;">#2020PLUR</button>와
+                함께 인스타그램에 업로드 해주시면 당신의 사진도 띄워 드릴게요!<br><br><br>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script type="text/javascript"
+                    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9546b5981d1890e21ba9bb0cf64ba74b&libraries=services"></script>
+    <script>
+        // 마커를 담을 배열입니다
+        var markers = [];
+
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        // 지도를 생성합니다    
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        // 장소 검색 객체를 생성합니다
+        var ps = new kakao.maps.services.Places();
+
+        // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
+
+        // 키워드로 장소를 검색합니다
+        // searchPlaces();
+
+        // 키워드 검색을 요청하는 함수입니다
+        function searchPlaces() {
+            
+            var keyword = document.getElementById('keyword').value;
+
+            if (!keyword.replace(/^\s+|\s+$/g, '')) {
+                alert('키워드를 입력해주세요!');
+                return false;
+            }
+
+            // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
+            ps.keywordSearch(keyword, placesSearchCB);
+        }
+
+        // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
+        function placesSearchCB(data, status, pagination) {
+            if (status === kakao.maps.services.Status.OK) {
+
+                // 정상적으로 검색이 완료됐으면
+                // 검색 목록과 마커를 표출합니다
+                displayPlaces(data);
+
+                // 페이지 번호를 표출합니다
+                displayPagination(pagination);
+
+            } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+
+                alert('검색 결과가 존재하지 않습니다.');
+                return;
+
+            } else if (status === kakao.maps.services.Status.ERROR) {
+
+                alert('검색 결과 중 오류가 발생했습니다.');
+                return;
+
+            }
+        }
+
+        // 검색 결과 목록과 마커를 표출하는 함수입니다
+        function displayPlaces(places) {
+
+            var listEl = document.getElementById('placesList'),
+                menuEl = document.getElementById('menu_wrap'),
+                fragment = document.createDocumentFragment(),
+                bounds = new kakao.maps.LatLngBounds(),
+                listStr = '';
+
+            // 검색 결과 목록에 추가된 항목들을 제거합니다
+            removeAllChildNods(listEl);
+
+            // 지도에 표시되고 있는 마커를 제거합니다
+            removeMarker();
+
+            for (var i = 0; i < places.length; i++) {
+
+                // 마커를 생성하고 지도에 표시합니다
+                var placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
+                    marker = addMarker(placePosition, i),
+                    itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
+
+                // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
+                // LatLngBounds 객체에 좌표를 추가합니다
+                bounds.extend(placePosition);
+
+                // 마커와 검색결과 항목에 mouseover 했을때
+                // 해당 장소에 인포윈도우에 장소명을 표시합니다
+                // mouseout 했을 때는 인포윈도우를 닫습니다
+                (function (marker, title) {
+                    kakao.maps.event.addListener(marker, 'mouseover', function () {
+                        displayInfowindow(marker, title);
+                    });
+
+                    kakao.maps.event.addListener(marker, 'mouseout', function () {
+                        infowindow.close();
+                    });
+
+                    itemEl.onmouseover = function () {
+                        displayInfowindow(marker, title);
+                    };
+
+                    itemEl.onmouseout = function () {
+                        infowindow.close();
+                    };
+                })(marker, places[i].place_name);
+
+                fragment.appendChild(itemEl);
+            }
+
+            // 검색결과 항목들을 검색결과 목록 Elemnet에 추가합니다
+            listEl.appendChild(fragment);
+            menuEl.scrollTop = 0;
+
+            // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
+            map.setBounds(bounds);
+        }
+
+        // 검색결과 항목을 Element로 반환하는 함수입니다
+        function getListItem(index, places) {
+
+            var el = document.createElement('li'),
+                itemStr = '<span class="markerbg marker_' + (index + 1) + '"></span>' +
+                    '<div class="info">' +
+                    '   <h5>' + places.place_name + '</h5>';
+
+            if (places.road_address_name) {
+                itemStr += '    <span>' + places.road_address_name + '</span>' +
+                    '   <span class="jibun gray">' + places.address_name + '</span>';
+            } else {
+                itemStr += '    <span>' + places.address_name + '</span>';
+            }
+
+            itemStr += '  <span class="tel">' + places.phone + '</span>' +
+                '</div>';
+
+            el.innerHTML = itemStr;
+            el.className = 'item';
+
+            return el;
+        }
+
+        // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
+        function addMarker(position, idx, title) {
+            var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
+                imageSize = new kakao.maps.Size(36, 37),  // 마커 이미지의 크기
+                imgOptions = {
+                    spriteSize: new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
+                    spriteOrigin: new kakao.maps.Point(0, (idx * 46) + 10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
+                    offset: new kakao.maps.Point(13, 37) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
+                },
+                markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+                marker = new kakao.maps.Marker({
+                    position: position, // 마커의 위치
+                    image: markerImage
+                });
+
+            marker.setMap(map); // 지도 위에 마커를 표출합니다
+            markers.push(marker);  // 배열에 생성된 마커를 추가합니다
+
+            return marker;
+        }
+
+        // 지도 위에 표시되고 있는 마커를 모두 제거합니다
+        function removeMarker() {
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+            markers = [];
+        }
+
+        // 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
+        function displayPagination(pagination) {
+            var paginationEl = document.getElementById('pagination'),
+                fragment = document.createDocumentFragment(),
+                i;
+
+            // 기존에 추가된 페이지번호를 삭제합니다
+            while (paginationEl.hasChildNodes()) {
+                paginationEl.removeChild(paginationEl.lastChild);
+            }
+
+            for (i = 1; i <= pagination.last; i++) {
+                var el = document.createElement('a');
+                el.href = "#";
+                el.innerHTML = i;
+
+                if (i === pagination.current) {
+                    el.className = 'on';
+                } else {
+                    el.onclick = (function (i) {
+                        return function () {
+                            pagination.gotoPage(i);
+                        }
+                    })(i);
+                }
+
+                fragment.appendChild(el);
+            }
+            paginationEl.appendChild(fragment);
+        }
+
+        // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
+        // 인포윈도우에 장소명을 표시합니다
+        function displayInfowindow(marker, title) {
+            var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+
+            infowindow.setContent(content);
+            infowindow.open(map, marker);
+        }
+
+        // 검색결과 목록의 자식 Element를 제거하는 함수입니다
+        function removeAllChildNods(el) {
+            while (el.hasChildNodes()) {
+                el.removeChild(el.lastChild);
+            }
+        }
+    </script>
+</body>
+
+</html>

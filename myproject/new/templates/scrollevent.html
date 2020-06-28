@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* background-image: url('https://postfiles.pstatic.net/MjAyMDA2MjFfMTQ3/MDAxNTkyNzM0NTgzMDE5.EQ3d3b1xKoQokhfSZzcoLwCP-X03v4i9sGaMsa5as3Qg.Paa94HO5y1qsf290970I_jgpkqL4bLmx2cvlZPNwR5Ug.JPEG.eevibe/IMG_0005.JPG?type=w773'); */
+            font-family: 'Gothic A1', sans-serif;
+            line-height: 180%;
+        }
+
+        .hideme {
+            opacity: 0;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            /* 1 */
+            $(window).scroll(function () {
+                /* 2 */
+                $('.hideme').each(function (i) {
+                    var bottom_of_object = $('.hideme').offset().top + $('.hideme').outerHeight();
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    /* 3 */
+                    if (bottom_of_window > bottom_of_object / 2) {
+                        $('.hideme').animate({ 'opacity': '1' }, 500);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <div id="container">
+
+        <div class="hideme"> 수십만 년 후면 또 다른 은하의 누군가가 우리 행성에서 자본주의 교리에 인질로 잡힌 현시대의 고통을 가엾게 여기며 구경할지도 모른다. 무슨 일이 어째서 벌어졌는지 이해하려고 시도한 외계 지능체는 우리의
+            기술적 세련과 극단적인 윤리적 우매함의 그 믿기 힘든 혼합에 충격을 받을 것이다. 이 책은 외계인이 그 의미를, 혹은 적어도 설명을 조금쯤 찾아내는 데 도움이 될 것이다. 내가 그곳에 가기로 마음먹은
+            것은 그곳에 간판이 달려 있지 않다는 소문을 듣고서였다.</div>
+        <div class="hideme">Fade In</div>
+        <div class="hideme">Fade In</div>
+        <div class="hideme">Fade In</div>
+        <div class="hideme">Fade In</div>
+
+        
+
+    </div>
+
+</body>
+
+</html>

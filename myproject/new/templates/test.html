@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- 웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lexend+Tera&family=Noto+Sans+KR&display=swap"
+        rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(210, 50, 98);
+            min-height: 2000px;
+        }
+
+        section {
+            min-height: 450px;
+            height: 100vh;
+        }
+    </style>
+    <script>
+        var sections = [];
+        var sectionsYStart = [];
+        var activeSection = 0;
+
+        var pageInit = function () {
+            sections = [];
+            sectionsYStart = [];
+            $("section").each(function (i, v) {
+                sections[i] = v;
+                sectionsYStart[i] = $(v).offset().top;
+            });
+        };
+
+        var ChangeColorOnScroll = function () {
+            var scroll = $(window).scrollTop();
+            scrollColors(scroll, $("body"), ["#FF006B", "#36DBFF", "#8000D2", "#00FFA7", "rgba(0,0,0,0)"]);
+        }
+
+        var scrollColors = function (scroll, el, colors) {
+            // which of all the sections, are we in between?
+            var z = 0, seclen = sections.length;
+            for (var i = 0; i < seclen; i++) {
+                if (scroll > sectionsYStart[i]) {
+                    z = i;
+                }
+            }
+            activeSection = z;
+
+            scroll_pos = scroll;
+            var animation_begin_pos = sectionsYStart[z]; //where you want the animation to begin
+            var animation_end_pos = sectionsYStart[z + 1]; //where you want the animation to stop
+            var beginning_color = $.Color(colors[z]);
+            var ending_color = $.Color(colors[z + 1]);
+
+            if (scroll_pos >= animation_begin_pos && scroll_pos <= animation_end_pos) {
+                var percentScrolled = scroll_pos / (animation_end_pos - animation_begin_pos);
+                if (percentScrolled > 1) { percentScrolled = percentScrolled - z; }
+                var newRed = beginning_color.red() + ((ending_color.red() - beginning_color.red()) * percentScrolled);
+                var newGreen = beginning_color.green() + ((ending_color.green() - beginning_color.green()) * percentScrolled);
+                var newBlue = beginning_color.blue() + ((ending_color.blue() - beginning_color.blue()) * percentScrolled);
+
+                var newAlpha = beginning_color.alpha() + ((ending_color.alpha() - beginning_color.alpha()) * percentScrolled);
+
+                var newColor = new $.Color(newRed, newGreen, newBlue, newAlpha);
+                el.animate({ backgroundColor: newColor }, 0);
+            } else if (scroll_pos > animation_end_pos) {
+                el.animate({ backgroundColor: ending_color }, 0);
+            } else if (scroll_pos < animation_begin_pos) {
+                el.animate({ backgroundColor: beginning_color }, 0);
+            } else { }
+
+        };
+
+
+        $(function () {
+            pageInit();
+            $(document).scroll(ChangeColorOnScroll);
+            $(window).resize(pageInit);
+        });
+    </script>
+</head>
+
+<body>
+    <section>Section 1</section>
+    <section>Section 2</section>
+    <section>Section 3</section>
+    <section>Section 4</section>
+    <section>Section 5</section>
+</body>
+
+</html>

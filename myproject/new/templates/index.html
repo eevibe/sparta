@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- 웹폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Lexend+Tera&family=Noto+Sans+KR&display=swap"
+        rel="stylesheet">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLUR 2020</title>
+    <style>
+        * {
+
+
+            margin: 20 auto;
+            /* background-color: rgb(0, 204, 255); */
+            /* background-image: linear-gradient(rgb(255, 162, 162), rgb(207, 134, 255)); */
+            /* background-image: linear-gradient(to right, rgb(198, 255, 107), rgb(146, 184, 255)); */
+
+
+        }
+
+        body {
+
+            font-family: 'Karla', 'Noto Sans KR';
+            font-size: 20px;
+
+
+        }
+
+        /* html, */
+        /* body {
+            overflow: scroll;
+        } */
+
+        /* #grad {
+            background-image: linear-gradient(red, yellow);
+        } */
+        .half {
+            overflow: scroll;
+            /* width: 50%; */
+            height: 100vh;
+            float: left;
+
+
+        }
+
+
+        /* @font-face {
+            font-family: 'Poppins', sans-serif;
+            src: url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Poppins&display=swap');
+            font-size: 50px;
+        } */
+
+        #box1 {
+            width: 20%;
+            /* background-image: linear-gradient( rgb(139, 97, 255), rgb(255, 255, 255)); */
+            background-color: rgb(255, 255, 255);
+            color: rgb(255, 116, 119);
+            padding: 70px;
+            font-family: 'Lexend Tera';
+            line-height: 180%;
+        }
+
+        #box2 {
+
+            width: 80%;
+            background-color: rgb(255, 255, 255);
+
+            color: rgb(172, 147, 110);
+            padding: 70px;
+            line-height: 170%;
+            /* letter-spacing: 0.3px; */
+            text-align: center;
+
+        }
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+            hashtag();
+        });
+
+        // function listing() {
+        //     alert('화면 로딩 후 잘 실행되었습니다');
+        // }
+
+        function hashtag() {
+            // 1. #star_box의 내부 html 태그를 모두 삭제합니다.
+            // $('#star-box').empty()
+
+
+            // 2. 서버에 1) GET 방식으로, 2) /api/list 라는 주소로 star_list를 요청합니다.
+            $.ajax({
+                type: "GET",
+                url: "/api/hashtag",
+                data: {},
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        let msg = response['msg'];
+                        alert(msg);
+                    }
+                }
+
+                // success: function (response) {
+
+
+
+                //     let photos = response['imgs']
+
+                //     for (let i = 0; i < photos.length; i++) {
+                //         let photo = photos[i]
+
+                //         let url = photo['post_url']
+
+
+
+                        // let temp_html = `<div class="card" style="width: 18rem;">
+                        //                     <img class="card-img-top" src="${url}" alt="Card image cap">
+                        //                 </div>`
+
+
+                //         $('#instagram').append(temp_html)
+                //     }
+                // }
+            });
+        }
+
+        
+
+        // function hashtags() {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/api/list",
+        //         data: {},
+        //         success: function (response) {
+        //             let photos = response['photos_list']
+        //             for (let i = 0; i < stars.length; i++) {
+        //                 let photo = photos[i]
+        //                 let img_url = photo['img_url']
+        //             }
+        //         }
+        //     })
+        // }
+    </script>
+</head>
+
+<body>
+    <div>
+
+
+        <div class="half" id="box1">
+
+
+
+            <!-- <div style="transform: rotate(45deg); padding: 10px;">Welcome</div><br>
+
+            <div style="transform: rotate(-45deg); padding: 20px;">to Cyber Festival</div> -->
+            <div><span style="color: rgb(250, 219, 187);">Peace</span><br><span
+                    style="color: rgb(227, 193, 156);">Love</span><br><span
+                    style="color: rgb(190, 141, 104);">Unity</span><br><span
+                    style="color: rgb(160, 104, 64);">Respect</span><br><br>
+                <span style="color: rgb(172, 147, 110);"> ✌🏻✊🏼✌🏽✊🏾 </span></div>
+
+
+        </div>
+        <div class="half" id="box2">
+            <!-- <span style="font-weight: bold;">PLUR 2020</span><br> -->
+            <a href="https://en.wikipedia.org/wiki/PLUR" style="color: rgb(172, 147, 110);">what PLUR — PEACE, LOVE,
+                UNITY, RESPECT — means<br></a>평화와 사랑, 화합 그리고 존중은 레이브 문화에서 중요하게 여겨지는 4가지 가치입니다.<br><br><br>
+            <img src="https://postfiles.pstatic.net/MjAyMDA2MThfNjgg/MDAxNTkyNDgzNjEzMDk5.ux2irv-wsB8sSqsI2awtjt4uGCYTlh14gPKPHDKUn8Ig.cX8DY5ymzeZmeQ7A94D3iMij2lNYgswKXAS316TPhaMg.PNG.eevibe/back1.png?type=w773"
+                alt="" style="width: 100%;">
+            <br><br><br><br>
+
+            우리는 코로나 바이러스로 인해 우리의 여름을, 우리의 축제를 잃어버렸습니다.<br>하지만 언제나 그랬듯 우리는 모두의 노력을 통해 돌파구를 찾아낼 것이며, 이 기나긴 싸움에서 승리할
+            것입니다!<br>
+            그때까지 이 시기를 이겨낼 하나의 방법으로 온라인 페스티벌 ‘PLUR 2020’이 탄생했습니다!<br><br>우선 시작하기에 앞서 준비해야 할 것들을 점검해봅시다.<br><br>
+            1. 이어폰, 헤드폰 — 더욱 프라이빗한 감상을 위해<br>
+            2. 페스티벌을 위한 착장 — 올해 페스티벌을 위해 준비한 옷들, 자랑이라도 하자구요!<br>
+            3. 배달 음식을 시켜먹을 돈<br><br>
+            다 준비되었나요? 입장합시다!<br><br>
+            <p align="middle">
+                <iframe width="100%" height="704" style="padding: 50px;"
+                    src="https://www.youtube.com/embed/_0KMSc7Jz_Y?list=PLoSIOFPSXQoOzRM5tbCes1MmKkzHi8jPq"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </p>
+
+            페스티벌에 입장한 당신, 주위를 둘러보니 모두 페스티벌을 위해 이를 갈았는지 힙스터들의 천국이네요.<br>
+            질 수 없다! 인스타그램에 #PLUR2020 을 포함해 당신의 착장 사진을 포스팅 해주세요!<br><br><br>
+
+            <div id="instagram">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top"
+                        src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/94352262_170965247447892_5430593623108928797_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=100&_nc_ohc=vDkKWS6wRk4AX_SINNf&oh=eb5be7aeae79c9ca6878121107122451&oe=5F15DADC"
+                        alt="Card image cap">
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
